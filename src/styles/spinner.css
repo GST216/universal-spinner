@@ -1,0 +1,31 @@
+.spinner-pulse {
+    visibility: hidden;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  
+  .spinner-pulse--running {
+    visibility: visible;
+    animation: spinner-pulse 0.9s ease-in-out infinite;
+  }
+  
+  .spinner-pulse--2 {
+    animation-delay: 0.15s;
+  }
+  
+  .spinner-pulse--3 {
+    animation-delay: 0.3s;
+  }
+  
+  @keyframes spinner-pulse {
+    0%,
+    100% {
+      transform: scale(0.7);
+      opacity: 0.5;
+    }
+  
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
