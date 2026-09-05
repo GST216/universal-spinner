@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Spinner Test</title>
+
+  <link rel="stylesheet" href="../dist/styles/spinner.css" />
+
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 40px;
+    }
+
+    #loader {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button {
+      margin-right: 8px;
+      padding: 8px 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Spinner Test</h1>
+
+  <div id="loader"></div>
+
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
+
+  <script type="module">
+    import { createSpinner } from "../dist/index.js";
+
+    const container = document.getElementById("loader");
+
+    const spinner = createSpinner({
+      size: 60,
+      color: "black",
+    });
+
+    spinner.mount(container);
+
+    document.getElementById("start").addEventListener("click", () => {
+      spinner.start();
+    });
+
+    document.getElementById("stop").addEventListener("click", () => {
+      spinner.stop();
+    });
+  </script>
+</body>
+</html>
